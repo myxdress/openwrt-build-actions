@@ -13,9 +13,6 @@ name: Official-官方
 on:
   workflow_dispatch:
     inputs:
-      SSH_PASS:
-        description: 'Password for SSH session'
-        required: true
       REPO_BRANCH:
         description: '（官方源码）请选择源码分支'
         required: true
@@ -128,13 +125,7 @@ jobs:
           echo "您没有设置仓库密匙，请按教程设置好密匙再来"
           echo "REPO_TOKEN密匙制作教程：https://git.io/jm.md"
           exit 1
-        fi
-        if [ -z "${{ inputs.SSH_PASS }}" ]
-        then
-          echo "SSH_PASS needs to be passed in the 'with' field."
-          exit 1
-        fi
-    
+        fi    
     - name: 准备结束
       uses: actions/checkout@v4
 
