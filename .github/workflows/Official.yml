@@ -27,11 +27,12 @@ on:
       CONFIG_FILE:
         description: '请选择配置文件'
         required: true
-        default: 'x86_64'
+        default: 'rax3000m'
         type: choice
         options:
           - '1907-phicomm-k3'
           - 'aarch64'
+          - 'rax3000m'
           - 'phicomm_k3'
           - 'x86_64'
       CPU_SELECTION:
